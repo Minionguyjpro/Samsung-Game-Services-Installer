@@ -9,7 +9,7 @@ jobs:
       uses: thedoctor0/zip-release@main
       with:
         type: 'zip'
-        filename: './build/release-$GITHUB_REF_NAME.zip'
+        filename: 'release-$GITHUB_REF_NAME.zip'
         exclusions: '*.git* ./build/ README.md'
         
     - uses: actions/checkout@v2
