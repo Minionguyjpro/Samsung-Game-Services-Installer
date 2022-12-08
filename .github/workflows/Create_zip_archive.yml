@@ -8,7 +8,6 @@ jobs:
     - name: Create report file
       run: date +%s > report.txt
        
-    - uses: actions/checkout@master
     - name: Archive Release
       uses: thedoctor0/zip-release@main
       with:
@@ -16,7 +15,16 @@ jobs:
         filename: 'release-$GITHUB_REF_NAME.zip'
         exclusions: '*.git* ./build/ README.md report.txt'
         
-    - uses: actions/checkout@v2
+    - name: Move to "build" directory
+      run: move /y D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\release-$GITHUB_REF_NAME.zip D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\build\
+      shell: cmd
+       
+    - name: Upload Samsung Game Services Installer ZIP Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: MCPE-Lunar-Client-Crosshair_latest.zip
+        path: D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\build\release-$GITHUB_REF_NAME.zip
+        
     - name: Push commit for ZIP archive
       run: |
          git config --global user.name '${{ secrets.git_username }}'
