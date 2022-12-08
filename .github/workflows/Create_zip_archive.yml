@@ -12,18 +12,18 @@ jobs:
       uses: thedoctor0/zip-release@main
       with:
         type: 'zip'
-        filename: 'release-$GITHUB_REF_NAME.zip'
+        filename: 'release-${{ github.ref_name }}.zip'
         exclusions: '*.git* ./build/ README.md report.txt'
         
     - name: Move to "build" directory
-      run: move /y D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\release-$GITHUB_REF_NAME.zip D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\build\
+      run: move /y "D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\release-${{ github.ref_name }}.zip" "D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\build\"
       shell: cmd
        
     - name: Upload Samsung Game Services Installer ZIP Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: MCPE-Lunar-Client-Crosshair_latest.zip
-        path: D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\build\release-$GITHUB_REF_NAME.zip
+        name: 'release-${{ github.ref_name }}.zip'
+        path: 'D:\a\Samsung-Game-Services-Installer\Samsung-Game-Services-Installer\build\release-${{ github.ref_name }}.zip'
         
     - name: Push commit for ZIP archive
       run: |
