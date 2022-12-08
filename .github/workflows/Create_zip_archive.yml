@@ -31,5 +31,5 @@ jobs:
          git config --global user.email '${{ secrets.git_email }}'
          git init
          git add -A
-         git commit -am "Create new ZIP archive release"
+         git commit -S -am "Create new ZIP archive release"
          git push -u origin ${{ github.ref_name }}
