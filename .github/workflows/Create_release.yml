@@ -1,4 +1,4 @@
-name: Create ZIP Archive
+name: Create Release
 on: [push]
 jobs:
  build:
@@ -33,3 +33,10 @@ jobs:
          git add -A
          git commit -am "Create new ZIP archive release"
          git push -u origin ${{ github.ref_name }}
+
+    - uses: actions/checkout@master
+    - name: Bump version and push tag
+      uses: laputansoft/github-tag-action@v4.6
+      with:
+        github_token: ${{ env.github-token }}
+        tag: ${{ steps.package-version.outputs.version }}
