@@ -5,6 +5,12 @@ A flashable zip with an installer for Samsung Game Services (Game Booster + Laun
 - Android 9 Pie or later
 - OneUI (Core) 1.0 or later
 - 100 MB or more free storage space
+## Know issues 
+| ISSUE/FEATURES                                 | SOLVED  |
+| ---------------------------------------------- | ------- |
+|  Game Laucher on other devices does not lauch  |   ❌️   |
+|  Game booster                                  |   ❌️   |
+|  Discord Linking                               |   ❌️   |
 # Installation
   ## Instructions for Magisk 
     1. Download the zip file 
