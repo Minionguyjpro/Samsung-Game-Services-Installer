@@ -26,3 +26,6 @@ A flashable zip with an installer for Samsung Game Services (Game Booster + Laun
   And done! You have successfully installed Game Services from Samsung on your device, which doesn't officialy support it.
   ## Instructions from TWRP Recovery or CWM Recovery
   Go to the main repo [here](https://github.com/Minionguyjpro/Samsung-Game-Services-Installer/tree/main-9ca5/system/priv-app)
+  
+# Credits
+- [Minionguyjpro](https://github.com/Minionguyjpro)
